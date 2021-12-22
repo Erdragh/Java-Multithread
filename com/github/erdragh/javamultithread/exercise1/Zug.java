@@ -28,11 +28,11 @@ public class Zug {
      * 
      * @return der n&auml;chsten freie und damit buchbare Platz
      */
-    public int nochFrei() {
+    public synchronized int nochFrei() {
         int n = platz; // letzten reservierten Platz lesen
         
         try {   	// denn das Verarbeiten braucht etwas Zeit ...
-            Thread.sleep((int) (Math.random() * 500));
+            Thread.sleep((int) (Math.random() * 1000));
         } catch (InterruptedException e) {
         }
         
